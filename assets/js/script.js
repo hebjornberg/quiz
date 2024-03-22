@@ -1,5 +1,5 @@
 
-const quizData = [
+const quizQuestion = [
     {
         question: "If I make the cocktail 'Dark and Stormy', what spirit am I using?",
         a: "Rum",
@@ -93,11 +93,13 @@ let score = 0
 
 loadQuiz()
 
+// Function to retrieve question from quizQuestion array 
+
 function loadQuiz() {
 
     deselectAnswers()
 
-    const currentQuizData = quizData[currentQuiz]
+    const currentQuizData = quizQuestion[currentQuiz]
     questionEl.innerText = currentQuizData.question
     a_answer.innerText = currentQuizData.a
     b_answer.innerText = currentQuizData.b
@@ -138,14 +140,14 @@ function getSelected() {
 submitBtn.addEventListener('click', () => {
     const answer = getSelected()
     if(answer) {
-        if(answer === quizData[currentQuiz].correct) {
+        if(answer === quizQuestion[currentQuiz].correct) {
             score++
         }
         currentQuiz++
-        if(currentQuiz < quizData.length) {
+        if(currentQuiz < quizQuestion.length) {
             loadQuiz()
         } else {
-            let resultsHTML = `<h2>You got ${score} out of ${quizData.length}</h2>`
+            let resultsHTML = `<h2>You got ${score} out of ${quizQuestion.length}</h2>`
             resultsHTML += `<button id="showAnswersBtn">Show Correct Answers</button>`
             quiz.innerHTML = resultsHTML
 
@@ -156,7 +158,7 @@ submitBtn.addEventListener('click', () => {
 })
 
 function showCorrectAnswers() {
-    let answersHTML = '<div id="answersContainer" style="max-height: 300px; overflow-y: auto;">'
+    let answersHTML = '<div id="answersContainer" style="max-height: 300px; overflow-y: scroll;">'
     quizData.forEach((question, i) => {
         answersHTML += `<h3>${question.question}</h3>`
         answersHTML += `<p>Answer: ${question[question.correct]}</p>`
