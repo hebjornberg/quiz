@@ -1,36 +1,59 @@
+
 const quizData = [
     {
-        question: "Which language runs in a web browser?",
-        a: "Java",
-        b: "C",
-        c: "Python",
-        d: "javascript",
-        correct: "d",
-    },
-    {
-        question: "What does CSS stand for?",
-        a: "Central Style Sheets",
-        b: "Cascading Style Sheets",
-        c: "Cascading Simple Sheets",
-        d: "Cars SUVs Sailboats",
-        correct: "b",
-    },
-    {
-        question: "What does HTML stand for?",
-        a: "Hypertext Markup Language",
-        b: "Hypertext Markdown Language",
-        c: "Hyperloop Machine Language",
-        d: "Helicopters Terminals Motorboats Lamborginis",
+        question: "If I make the cocktail 'Dark and Stormy', what spirit am I using?",
+        a: "Rum",
+        b: "Vodka",
+        c: "Cachaça",
         correct: "a",
     },
     {
-        question: "What year was JavaScript launched?",
-        a: "1996",
-        b: "1995",
-        c: "1994",
-        d: "none of the above",
+        question: "Which country does the potato come from?",
+        a: "Ireland",
+        b: "Peru",
+        c: "China",
         correct: "b",
     },
+    {
+        question: "Vilnius is the capital of which European country?",
+        a: "Liechtenstein",
+        b: "Lithuania",
+        c: "Andorra",
+        correct: "b",
+    },
+    {
+        question: "What is the chemical formula for table salt?",
+        a: "NaCl",
+        b: "NaOH",
+        c: "H2SO4",
+        correct: "a",
+    },
+
+    {
+        question: "What is xanthophobia?",
+        a: "Fear of peanut butter sticking to the roof of your mouth",
+        b: "Fear of the colour yellow",
+        c: "Fear of being without your mobile phone",
+        correct: "b",
+    },
+
+    {
+        question: 'Who invented "The little black dress"?',
+        a: "Coco Chanel",
+        b: "Yves Saint Laurent",
+        c: "Pierre Cardin",
+        correct: "a",
+    },
+
+    {
+        question: '"Siam" is the historical name of which country?',
+        a: "Vietnam",
+        b: "Sri Lanka",
+        c: "Thailand",
+        correct: "c",
+    },
+
+
 ];
 const quiz= document.getElementById('quiz')
 const answerEls = document.querySelectorAll('.answer')
@@ -38,7 +61,6 @@ const questionEl = document.getElementById('question')
 const a_text = document.getElementById('a_text')
 const b_text = document.getElementById('b_text')
 const c_text = document.getElementById('c_text')
-const d_text = document.getElementById('d_text')
 const submitBtn = document.getElementById('submit')
 let currentQuiz = 0
 let score = 0
@@ -50,7 +72,6 @@ function loadQuiz() {
     a_text.innerText = currentQuizData.a
     b_text.innerText = currentQuizData.b
     c_text.innerText = currentQuizData.c
-    d_text.innerText = currentQuizData.d
 }
 function deselectAnswers() {
     answerEls.forEach(answerEl => answerEl.checked = false)
