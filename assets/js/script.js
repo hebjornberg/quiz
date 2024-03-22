@@ -53,29 +53,61 @@ const quizData = [
         correct: "c",
     },
 
+    {
+        question: 'How many millilitres are an English pint?',
+        a: "500 ml",
+        b: "568 ml",
+        c: "627 ml",
+        correct: "b",
+    },
+
+    {
+        question: 'How many time zones are there in Russia?',
+        a: "10",
+        b: "9",
+        c: "11",
+        correct: "c",
+    },
+
+    {
+        question: 'Which country has the most islands in the world?',
+        a: "Indonesia",
+        b: "Sweden",
+        c: "Philippines",
+        correct: "b",
+    },
+
 
 ];
+
 const quiz= document.getElementById('quiz')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
-const a_text = document.getElementById('a_text')
-const b_text = document.getElementById('b_text')
-const c_text = document.getElementById('c_text')
+const a_answer = document.getElementById('a_answer')
+const b_answer = document.getElementById('b_answer')
+const c_answer = document.getElementById('c_answer')
 const submitBtn = document.getElementById('submit')
+
 let currentQuiz = 0
 let score = 0
+
 loadQuiz()
+
 function loadQuiz() {
+
     deselectAnswers()
+
     const currentQuizData = quizData[currentQuiz]
     questionEl.innerText = currentQuizData.question
-    a_text.innerText = currentQuizData.a
-    b_text.innerText = currentQuizData.b
-    c_text.innerText = currentQuizData.c
+    a_answer.innerText = currentQuizData.a
+    b_answer.innerText = currentQuizData.b
+    c_answer.innerText = currentQuizData.c
 }
+
 function deselectAnswers() {
     answerEls.forEach(answerEl => answerEl.checked = false)
 }
+
 function getSelected() {
     let answer
     answerEls.forEach(answerEl => {
@@ -85,7 +117,8 @@ function getSelected() {
     })
     return answer
 }
-submitBtn.addEventListener('click', () => {
+
+/** submitBtn.addEventListener('click', () => {
     const answer = getSelected()
     if(answer) {
        if(answer === quizData[currentQuiz].correct) {
@@ -95,10 +128,42 @@ submitBtn.addEventListener('click', () => {
        if(currentQuiz < quizData.length) {
            loadQuiz()
        } else {
-           quiz.innerHTML = `
-           <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+           quiz.innerHTML = `<h2>You answered ${score}/${quizData.length} questions correctly</h2>
            <button onclick="location.reload()">Reload</button>
-           `
+           ` 
        }
     }
+}) **/
+
+submitBtn.addEventListener('click', () => {
+    const answer = getSelected()
+    if(answer) {
+        if(answer === quizData[currentQuiz].correct) {
+            score++
+        }
+        currentQuiz++
+        if(currentQuiz < quizData.length) {
+            loadQuiz()
+        } else {
+            let resultsHTML = `<h2>You got ${score} out of ${quizData.length}</h2>`
+            resultsHTML += `<button id="showAnswersBtn">Show Correct Answers</button>`
+            quiz.innerHTML = resultsHTML
+
+            const showAnswersBtn = document.getElementById('showAnswersBtn')
+            showAnswersBtn.addEventListener('click', showCorrectAnswers)
+        }
+    }
 })
+
+function showCorrectAnswers() {
+    let answersHTML = '<div id="answersContainer" style="max-height: 300px; overflow-y: auto;">'
+    quizData.forEach((question, i) => {
+        answersHTML += `<h3>${question.question}</h3>`
+        answersHTML += `<p>Answer: ${question[question.correct]}</p>`
+    })
+    answersHTML += '</div>'
+    quiz.innerHTML += answersHTML
+    showAnswersBtn.removeEventListener('click', showCorrectAnswers)
+    showAnswersBtn.style.display = 'none'
+}
+
