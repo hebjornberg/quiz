@@ -1,4 +1,6 @@
 
+// Defining quiz questions through array 
+
 const quizQuestion = [
     {
         question: "If I make the cocktail 'Dark and Stormy', what spirit am I using?",
@@ -120,22 +122,6 @@ function getSelected() {
     return answer
 }
 
-/** submitBtn.addEventListener('click', () => {
-    const answer = getSelected()
-    if(answer) {
-       if(answer === quizData[currentQuiz].correct) {
-           score++
-       }
-       currentQuiz++
-       if(currentQuiz < quizData.length) {
-           loadQuiz()
-       } else {
-           quiz.innerHTML = `<h2>You answered ${score}/${quizData.length} questions correctly</h2>
-           <button onclick="location.reload()">Reload</button>
-           ` 
-       }
-    }
-}) **/
 
 submitBtn.addEventListener('click', () => {
     const answer = getSelected()
@@ -159,7 +145,7 @@ submitBtn.addEventListener('click', () => {
 
 function showCorrectAnswers() {
     let answersHTML = '<div id="answersContainer" style="max-height: 300px; overflow-y: scroll;">'
-    quizData.forEach((question, i) => {
+    quizQuestion.forEach((question, i) => {
         answersHTML += `<h3>${question.question}</h3>`
         answersHTML += `<p>Answer: ${question[question.correct]}</p>`
     })
