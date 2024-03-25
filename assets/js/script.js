@@ -149,10 +149,25 @@ nextBtn.addEventListener('click', () => {
 // Function to show the correct answers 
 
 function showCorrectAnswers() {
-    let answersHTML = '<div id="answersContainer" style="max-height: 80vh; overflow-y: scroll;">'
+    let answersHTML = '<div id="answersContainer" style="max-height: 70vh; overflow-y: scroll;">'
     quizQuestion.forEach((question, i) => {
-        answersHTML += `<h3>${question.question}</h3>`
-        answersHTML += `<p>Answer: ${question[question.correct]}</p>`
+
+        answersHTML += `<h3>${question.question}</h3>`;
+        answersHTML += `<ul>`;
+
+        // Loop for showing the correct option, and as well as displaying the incorrect option if that was chosen
+
+        for (const option in question) {
+            if (option !== 'question' && option !== 'correct') {
+                const optionText = question[option];
+                const isCorrect = option === question.correct;
+                const userAnswer = getSelected() === option;
+                const correctSign = isCorrect ? ' &#10004;' : '';
+                const incorrectSign = !isCorrect && userAnswer ? '&#10060;' : '';
+                answersHTML += `<li>${optionText}${correctSign}${incorrectSign}</li>`;
+            }
+        }
+        answersHTML += `</ul>`;
     })
     answersHTML += '</div>'
 
@@ -167,14 +182,4 @@ function showCorrectAnswers() {
     reloadBtn.addEventListener('click', () => {
         window.location.href = 'index.html'
     });
-}
-
-// Function to return to landing page when refreshing
-
-window.onload = function() {
-
-    if(performance.navigation.type === 1) {
-
-        window.location.href = 'index.html';
-    }
 }
