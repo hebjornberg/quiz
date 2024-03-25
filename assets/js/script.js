@@ -88,7 +88,7 @@ const questionEl = document.getElementById('question')
 const a_answer = document.getElementById('a_answer')
 const b_answer = document.getElementById('b_answer')
 const c_answer = document.getElementById('c_answer')
-const submitBtn = document.getElementById('submit')
+const nextBtn = document.getElementById('next')
 
 let currentQuiz = 0
 let score = 0
@@ -112,6 +112,7 @@ function deselectAnswers() {
     answerEls.forEach(answerEl => answerEl.checked = false)
 }
 
+
 function getSelected() {
     let answer
     answerEls.forEach(answerEl => {
@@ -123,7 +124,7 @@ function getSelected() {
 }
 
 
-submitBtn.addEventListener('click', () => {
+nextBtn.addEventListener('click', () => {
     const answer = getSelected()
     if(answer) {
         if(answer === quizQuestion[currentQuiz].correct) {
