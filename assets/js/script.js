@@ -146,6 +146,8 @@ nextBtn.addEventListener('click', () => {
     }
 })
 
+// Function to show the correct answers 
+
 function showCorrectAnswers() {
     let answersHTML = '<div id="answersContainer" style="max-height: 80vh; overflow-y: scroll;">'
     quizQuestion.forEach((question, i) => {
@@ -153,9 +155,18 @@ function showCorrectAnswers() {
         answersHTML += `<p>Answer: ${question[question.correct]}</p>`
     })
     answersHTML += '</div>'
+
+    answersHTML += '<button id="reloadBtn">Back To Start</button>'
+
     quiz.innerHTML += answersHTML
+
     showAnswersBtn.removeEventListener('click', showCorrectAnswers)
     showAnswersBtn.style.display = 'none'
+
+    const reloadBtn = document.getElementById('reloadBtn');
+    reloadBtn.addEventListener('click', () => {
+        window.location.href = 'index.html'
+    });
 }
 
 // Function to return to landing page when refreshing
