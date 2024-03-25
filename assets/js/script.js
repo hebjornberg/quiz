@@ -120,7 +120,7 @@ function deselectAnswers() {
 // Function to see if answer is selected 
 
 function getSelected() {
-    const answer
+    let answer
     answerSel.forEach(answerSe => {
         if(answerSe.checked) {
             answer = answerSe.id

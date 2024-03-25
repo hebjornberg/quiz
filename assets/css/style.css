@@ -18,7 +18,7 @@ body{
 
 .start-btn {
 
-  background-color: #F4D35E;
+  background-color: #A63446;
   color: #fff;
   border: none;
   display: block;
@@ -33,13 +33,13 @@ body{
 }
 
 .start-btn:hover {
-  background-color: #EE964B;
+  background-color: #7E1946;
 }
 
 .quiz-container, .landing-box {
 
   position: relative; 
-  background-color: #EBEBD3;
+  background-color: #FBFEF9;
   border-radius: 30px;
   box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
   max-width: 90%; 
@@ -53,8 +53,8 @@ body{
 
 .heading, .trivia-heading {
 
-  background-color: rgba(8, 61, 119);
-  color: #EBEBD3;
+  background-color: #0C6291;
+  color: #FBFEF9;
   text-align: center;
   position: relative;
   z-index: 1;  
@@ -118,8 +118,8 @@ ul li label{
 }
 
 button {
-  background-color: #F4D35E;
-  color: #fff;
+  background-color: #A63446;
+  color: #ffffff;
   border: none;
   position: relative; 
   display: block;
@@ -134,18 +134,18 @@ button {
 }
 
 button:hover{
-  background-color: #EE964B;
+  background-color: #7E1946;
 }
 
 button:focus{
   outline: none;
-  background-color: #F95738;
+  background-color: #014421;
 }
 
 #quiz-result {
 
   background-color: rgba(8, 61, 119);
-  color: #EBEBD3;
+  color: #FBFEF9;
   text-align: center;
   position: relative;
   z-index: 1;  
@@ -161,7 +161,7 @@ button:focus{
   .quiz-container, .landing-box {
 
     position: relative; 
-    background-color: #EBEBD3;
+    background-color: #FBFEF9;
     border-radius: 30px;
     box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
     max-width: 90%; 
