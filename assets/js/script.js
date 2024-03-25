@@ -145,7 +145,7 @@ nextBtn.addEventListener('click', () => {
 })
 
 function showCorrectAnswers() {
-    let answersHTML = '<div id="answersContainer" style="max-height: 300px; overflow-y: scroll;">'
+    let answersHTML = '<div id="answersContainer" style="max-height: 50vh; overflow-y: scroll;">'
     quizQuestion.forEach((question, i) => {
         answersHTML += `<h3>${question.question}</h3>`
         answersHTML += `<p>Answer: ${question[question.correct]}</p>`

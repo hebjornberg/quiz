@@ -14,9 +14,30 @@ body{
   height: 100vh;
   overflow: hidden;
   margin: 0;
+
 }
 
-.quiz-container{
+.start-btn {
+
+  background-color: #EE964B;
+  color: #fff;
+  border: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 1.3rem;
+  text-align: center;
+  text-decoration: none; 
+
+}
+
+.start-btn:hover {
+  background-color: #F4D35E;
+}
+
+.quiz-container, .landing-box {
 
   position: relative; 
   background-color: #EBEBD3;
@@ -26,7 +47,7 @@ body{
   overflow: hidden;
 }
 
-.heading {
+.heading, .trivia-heading {
 
   background-color: rgba(8, 61, 119);
   color: #EBEBD3;
@@ -34,7 +55,7 @@ body{
   position: relative;
   z-index: 1;  
   padding: 10px;
-  /* width: 100%; */ 
+  width: 100%;
   inset: 0 0 auto 0; 
   border-top-left-radius: 30px;
   border-top-right-radius: 30px; 
@@ -65,7 +86,7 @@ ul li label{
   cursor: pointer;
 }
 
-button{
+button {
   background-color: #F4D35E;
   color: #fff;
   border: none;
