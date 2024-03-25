@@ -82,6 +82,8 @@ const quizQuestion = [
 
 ];
 
+// Define variables 
+
 const quiz= document.getElementById('quiz')
 const answerSel = document.querySelectorAll('.answer')
 const questionSel = document.getElementById('question')
@@ -108,15 +110,17 @@ function loadQuiz() {
     c_answer.innerText = currentQuizData.c
 }
 
-
+// Function to clear answers before a new question  
 
 function deselectAnswers() {
     answerSel.forEach(answerSe => answerSe.checked = false)
 }
 
 
+// Function to see if answer is selected 
+
 function getSelected() {
-    let answer
+    const answer
     answerSel.forEach(answerSe => {
         if(answerSe.checked) {
             answer = answerSe.id
