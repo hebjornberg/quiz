@@ -83,15 +83,15 @@ const quizQuestion = [
 ];
 
 const quiz= document.getElementById('quiz')
-const answerEls = document.querySelectorAll('.answer')
-const questionEl = document.getElementById('question')
+const answerSel = document.querySelectorAll('.answer')
+const questionSel = document.getElementById('question')
 const a_answer = document.getElementById('a_answer')
 const b_answer = document.getElementById('b_answer')
 const c_answer = document.getElementById('c_answer')
 const nextBtn = document.getElementById('next')
 
-let currentQuiz = 0
-let score = 0
+let currentQuiz = 0;
+let score = 0;
 
 loadQuiz()
 
@@ -102,22 +102,24 @@ function loadQuiz() {
     deselectAnswers()
 
     const currentQuizData = quizQuestion[currentQuiz]
-    questionEl.innerText = currentQuizData.question
+    questionSel.innerText = currentQuizData.question
     a_answer.innerText = currentQuizData.a
     b_answer.innerText = currentQuizData.b
     c_answer.innerText = currentQuizData.c
 }
 
+
+
 function deselectAnswers() {
-    answerEls.forEach(answerEl => answerEl.checked = false)
+    answerSel.forEach(answerSe => answerSe.checked = false)
 }
 
 
 function getSelected() {
     let answer
-    answerEls.forEach(answerEl => {
-        if(answerEl.checked) {
-            answer = answerEl.id
+    answerSel.forEach(answerSe => {
+        if(answerSe.checked) {
+            answer = answerSe.id
         }
     })
     return answer
@@ -134,7 +136,7 @@ nextBtn.addEventListener('click', () => {
         if(currentQuiz < quizQuestion.length) {
             loadQuiz()
         } else {
-            let resultsHTML = `<h2>You got ${score} out of ${quizQuestion.length}</h2>`
+            let resultsHTML = `<h2 class="quiz-result">You got ${score} out of ${quizQuestion.length}</h2>`
             resultsHTML += `<button id="showAnswersBtn">Show Correct Answers</button>`
             quiz.innerHTML = resultsHTML
 
@@ -145,7 +147,7 @@ nextBtn.addEventListener('click', () => {
 })
 
 function showCorrectAnswers() {
-    let answersHTML = '<div id="answersContainer" style="max-height: 50vh; overflow-y: scroll;">'
+    let answersHTML = '<div id="answersContainer" style="max-height: 80vh; overflow-y: scroll;">'
     quizQuestion.forEach((question, i) => {
         answersHTML += `<h3>${question.question}</h3>`
         answersHTML += `<p>Answer: ${question[question.correct]}</p>`
@@ -156,3 +158,12 @@ function showCorrectAnswers() {
     showAnswersBtn.style.display = 'none'
 }
 
+// Function to return to landing page when refreshing
+
+window.onload = function() {
+
+    if(performance.navigation.type === 1) {
+
+        window.location.href = 'index.html';
+    }
+}
