@@ -17,6 +17,13 @@ const quizQuestion = [
         correct: "b",
     },
     {
+        question: 'The song "Strawberry Fields Forever" by the Beatles is about a landmark in their hometown Liverpool. Which landmark was it?',
+        a: "A theater",
+        b: "A farm",
+        c: "An orphanage",
+        correct: "c",
+    },
+    {
         question: "Vilnius is the capital of which European country?",
         a: "Liechtenstein",
         b: "Lithuania",
@@ -117,7 +124,7 @@ function deselectAnswers() {
 }
 
 
-// Function to see if answer is selected 
+// Function for selected answer
 
 function getSelected() {
     let answer
@@ -128,6 +135,10 @@ function getSelected() {
     })
     return answer
 }
+
+/** Function for button to move on to next question. Will only function if an answer has been selected.
+ * At end of quiz, button to show answers will appear. 
+ */
 
 
 nextBtn.addEventListener('click', () => {
@@ -165,12 +176,14 @@ function showCorrectAnswers() {
             if (option !== 'question' && option !== 'correct') {
                 const optionText = question[option];
                 const isCorrect = option === question.correct;
-                const userAnswer = getSelected() === option;
+                const userAnswer = getSelected();
                 const correctSign = isCorrect ? ' &#10004;' : '';
-                const incorrectSign = !isCorrect && userAnswer ? '&#10060;' : '';
+                const incorrectSign = !isCorrect && userAnswer === question.correct ? '&#10060;' : '';
                 answersHTML += `<li>${optionText}${correctSign}${incorrectSign}</li>`;
             }
         }
+
+
         answersHTML += `</ul>`;
     })
     answersHTML += '</div>'
