@@ -169,26 +169,10 @@ nextBtn.addEventListener('click', () => {
 
 function showCorrectAnswers() {
     let answersHTML = '<div id="answersContainer" style="max-height: 70vh; overflow-y: scroll;">'
-    quizQuestion.forEach((question, i) => {
+    quizQuestion.forEach((question) => {
 
         answersHTML += `<h3>${question.question}</h3>`;
         answersHTML += `<ul>`;
-
-        // Loop for showing the correct option, and as well as displaying the incorrect option if that was chosen
-
-      /**  for (const option in question) {
-            if (option !== 'question' && option !== 'correct') {
-                const optionText = question[option];
-                const isCorrect = option === question.correct;
-                const userAnswer = question.answer;
-                const correctSign = isCorrect ? ' &#10004;' : '';
-                const incorrectSign = !isCorrect && userAnswer === question.correct ? '&#10060;' : '';
-                answersHTML += `<li>${optionText}${correctSign}${incorrectSign}</li>`;
-            }
-        }
-*/ 
-
-// Showing the answers when done with quiz
 
         const options = ['a','b','c']; 
         
@@ -208,15 +192,13 @@ function showCorrectAnswers() {
 
         optionHTML += '</li>'
         
-        // const correctSign = isCorrect ? ' &#10004;' : '';
-        // const incorrectSign = !isCorrect ? '&#10060;' : '';
-        // answersHTML += `<li>${optionText}${correctSign}${incorrectSign}</li>`;
         answersHTML += optionHTML;
 
         });
     
         answersHTML += `</ul>`;
     })
+
     answersHTML += '</div>'
 
     answersHTML += '<button id="reloadBtn">Back To Start</button>'
