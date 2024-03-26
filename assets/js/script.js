@@ -138,12 +138,16 @@ function getSelected() {
 
 /** Function for button to move on to next question. Will only function if an answer has been selected.
  * At end of quiz, button to show answers will appear. 
+ * Saves the answers the user has chosen. 
  */
 
 
 nextBtn.addEventListener('click', () => {
     const answer = getSelected()
     if(answer) {
+
+        quizQuestion[currentQuiz].answer = answer; 
+
         if(answer === quizQuestion[currentQuiz].correct) {
             score++
         }
@@ -172,18 +176,45 @@ function showCorrectAnswers() {
 
         // Loop for showing the correct option, and as well as displaying the incorrect option if that was chosen
 
-        for (const option in question) {
+      /**  for (const option in question) {
             if (option !== 'question' && option !== 'correct') {
                 const optionText = question[option];
                 const isCorrect = option === question.correct;
-                const userAnswer = getSelected();
+                const userAnswer = question.answer;
                 const correctSign = isCorrect ? ' &#10004;' : '';
                 const incorrectSign = !isCorrect && userAnswer === question.correct ? '&#10060;' : '';
                 answersHTML += `<li>${optionText}${correctSign}${incorrectSign}</li>`;
             }
         }
+*/ 
 
+// Showing the answers when done with quiz
 
+        const options = ['a','b','c']; 
+        
+        options.forEach(option => {
+        
+        const optionText = question[option];    
+        const isCorrect = option === question.correct; 
+        const userAnswer = question.answer; 
+
+        let optionHTML = `<li>${optionText}`; 
+        if (isCorrect) {
+            optionHTML += ' &#10004;'; 
+        } 
+        if (userAnswer === option && !isCorrect) {
+            optionHTML += '&#10060;';
+        }
+
+        optionHTML += '</li>'
+        
+        // const correctSign = isCorrect ? ' &#10004;' : '';
+        // const incorrectSign = !isCorrect ? '&#10060;' : '';
+        // answersHTML += `<li>${optionText}${correctSign}${incorrectSign}</li>`;
+        answersHTML += optionHTML;
+
+        });
+    
         answersHTML += `</ul>`;
     })
     answersHTML += '</div>'
