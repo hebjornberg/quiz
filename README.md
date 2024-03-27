@@ -28,7 +28,7 @@ The Trivia Time application is a simple quiz application that is designed to all
   + [Validation](#validation "Validation")
   + [Lighthouse](#lighthouse "Lighthouse")
   + [Bugs](#bugs "Bugs")
-+ |[Deployment](#deployment "Deployment")
++ [Deployment](#deployment "Deployment")
 + [Credits](#credits "Credits")
 
 ## UX
