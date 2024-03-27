@@ -93,13 +93,13 @@ const quizQuestion = [
 
 // Define variables 
 
-const quiz= document.getElementById('quiz')
-const answerSel = document.querySelectorAll('.answer')
-const questionSel = document.getElementById('question')
-const a_answer = document.getElementById('a_answer')
-const b_answer = document.getElementById('b_answer')
-const c_answer = document.getElementById('c_answer')
-const nextBtn = document.getElementById('next')
+const quiz= document.getElementById('quiz');
+const answerSel = document.querySelectorAll('.answer');
+const questionSel = document.getElementById('question');
+const a_answer = document.getElementById('a_answer');
+const b_answer = document.getElementById('b_answer');
+const c_answer = document.getElementById('c_answer');
+const nextBtn = document.getElementById('next');
 
 let currentQuiz = 0;
 let score = 0;
