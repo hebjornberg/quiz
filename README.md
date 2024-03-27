@@ -30,21 +30,42 @@ The Trivia Time application is a simple quiz application that is designed to all
 
 ## UX
 
-# Site Purpose 
+### Site Purpose 
 
 Trivia Time is an application with the purpose of entertaining the user with some trivial knowledge.
 
-# Site Goal 
+### Site Goal 
 
 The goal of the application is to challenge the user with questions, while awakening an interest to learn some more trivial knowledge. 
 
-# Audience
+### Audience
 
 Anyone that is interested in random facts or trivial knowledge can use this application. As it is multiple choice, there is always the option to guess. The target audience would be for adults. 
 
-# User Goal
+### User Goal
 
 For the user to increase their knowledge from the questions being asked. To get caught up in the game, along with learning new knowledge at the end of the game. 
+
+---
+
+## Design
+
+### Color Scheme 
+
+![Color Scheme of Quiz Application](assets/docs/images/color-scheme.png)
+
+The color scheme was generated at [Coloors.co](https://coolors.co/) and chosen as it created a clear, visible contrast that makes the quiz application accessible yet attractive and engaging. 
+
+Header: #0C6291
+Text in header: #FBFEF9
+Question area: #FBFEF9
+Next Button: #A63446, #7E1946, #014421
+
+### Typography 
+
+The font chosen for Trivia Time is 'Noto Sans' as it is a visually appealing font, that does not distract from the content of the questions. 
+
+
 
 
 
