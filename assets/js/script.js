@@ -1,3 +1,5 @@
+// Parts of this code has been based on a tutorial from Coding With Nick
+// https://codingwithnick.in/create-a-quiz-app-using-html-css-javascript/
 
 // Defining quiz questions through array 
 
@@ -124,7 +126,7 @@ function deselectAnswers() {
 }
 
 
-// Function for selected answer
+// Function for selected answer, does not save the answers the user has put in 
 
 function getSelected() {
     let answer
@@ -138,16 +140,17 @@ function getSelected() {
 
 /** Function for button to move on to next question. Will only function if an answer has been selected.
  * At end of quiz, button to show answers will appear. 
- * Saves the answers the user has chosen. 
  */
 
-
+// Button appearing to go to next question when selecting an answer
 nextBtn.addEventListener('click', () => {
     const answer = getSelected()
     if(answer) {
 
+        // Saves the answer the user has put in 
         quizQuestion[currentQuiz].answer = answer; 
 
+        // Increments scores if the user puts in the correct answer
         if(answer === quizQuestion[currentQuiz].correct) {
             score++
         }
