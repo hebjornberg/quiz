@@ -143,7 +143,12 @@ The site was deployed through GitHub by the following steps:
 4. The page is now being deployed and will appear with a live link by your repository.
 5. The link to the live site can be found here [Trivia Time](https://hebjornberg.github.io/quiz/)
 
+## Credits 
 
+- The structure and the layout originally came from a tutorial created by Coding With Nick. The source code from the tutorial can be found here [Create a Quiz App with HTML, CSS & JavaScript](https://codingwithnick.in/create-a-quiz-app-using-html-css-javascript/)
+- The code has since been altered to fit the the idea of this project and have additional functionality
+- I want to add an additional thank you to the Code Institute Slack-community #community-sweden 
+for support and assistance throughout the project, including the README-section
 
 
 
