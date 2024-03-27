@@ -2,7 +2,7 @@
 
 ![Device mockup of responsive quiz application](assets/docs/images/device-mockup.png)
 
-The Trivia Time application is a simple quiz application that is designed to allow the user to test their trivial knowledge with a variety of questions. The application involves the functions of starting the quiz, answering questions from multiple options and to see their score along with the correct answers at the end of the quiz. It is a front-end application built with HTML, CSS and JavaScript. 
+The Trivia Time application is a simple quiz application that is designed to allow the user to test their trivial knowledge with a variety of questions. The application involves the functions of starting the quiz, answering questions from multiple options and to see their score along with the correct answers at the end of the quiz. It is a front-end application built with HTML, CSS and JavaScript. It is a responsive application to function on different devices. 
 
 [Link to website for Trivia Time quiz](https://hebjornberg.github.io/quiz/)
 
@@ -59,10 +59,10 @@ For the user to increase their knowledge from the questions being asked. To get 
 
 The color scheme was generated at [Coloors.co](https://coolors.co/) and chosen as it created a clear, visible contrast that makes the quiz application accessible yet attractive and engaging. 
 
-Lapiz Lazuli: #0C6291
-Baby powder: #FBFEF9
-Amaranth purple: #A63446
-Murrey: #7E1946
+Lapiz Lazuli: #0C6291<br>
+Baby powder: #FBFEF9<br>
+Amaranth purple: #A63446<br>
+Murrey: #7E1946<br>
 UP Forest Green: #014421
 
 ### Typography 
@@ -100,7 +100,7 @@ When you have finished all the questions, the score you have accumulated will ap
 
 ### Correct Answers
 
-![Image of Correct Answers](assets/docs/images/results)
+![Image of Correct Answers](assets/docs/images/results.png)
 
 When clicking the "Show Correct Answers"-button displayed with the score, you get directed to all the questions being displayed with the options. Next to the correct answers is a checkmark, to mark with option was the correct one. 
 In case the user selected a wrong answer, a red cross appears to the selected answer, and the checkmark for the correct answer indicates the correct answer in the same question. The "Show Correct Answers"-feature is a way to visualise the whole quiz, but also a way for the user to learn new facts if they didnt already know the answer to the question. 
