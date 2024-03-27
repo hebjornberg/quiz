@@ -149,6 +149,7 @@ The site was deployed through GitHub by the following steps:
 - The code has since been altered to fit the the idea of this project and have additional functionality
 - I want to add an additional thank you to the Code Institute Slack-community #community-sweden 
 for support and assistance throughout the project, including the README-section
+- As well, I want to give credit to the Tutor Support at Code Institute for assisting me resolving bugs
 
 
 
