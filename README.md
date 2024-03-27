@@ -56,14 +56,18 @@ For the user to increase their knowledge from the questions being asked. To get 
 
 The color scheme was generated at [Coloors.co](https://coolors.co/) and chosen as it created a clear, visible contrast that makes the quiz application accessible yet attractive and engaging. 
 
-Header: #0C6291
-Text in header: #FBFEF9
-Question area: #FBFEF9
-Next Button: #A63446, #7E1946, #014421
+Lapiz Lazuli: #0C6291
+Baby powder: #FBFEF9
+Amaranth purple: #A63446
+Murrey: #7E1946
+UP Forest Green: #014421
 
 ### Typography 
 
 The font chosen for Trivia Time is 'Noto Sans' as it is a visually appealing font, that does not distract from the content of the questions. 
+
+[Find font here](https://fonts.google.com/share?selection.family=Noto+Sans:ital,wght@0,100..900;1,100..900)
+
 
 
 
