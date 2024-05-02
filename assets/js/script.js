@@ -105,7 +105,7 @@ let currentQuiz = 0;
 let score = 0;
 let timeLeft = 30;
 let timeInterval;
-let startTime;
+let startTime = new Date().getTime();
 
 // Timer function
 
@@ -138,8 +138,7 @@ function loadQuiz() {
     timeLeft = 30; 
     clearInterval(timeInterval);
     timeInterval = setInterval(updateTimer, 1000);
-
-    startTime = new Date().getTime();
+    updateTimer();
 }
 
 // Function to clear answers before a new question  
