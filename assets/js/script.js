@@ -105,6 +105,7 @@ let currentQuiz = 0;
 let score = 0;
 let timeLeft = 30;
 let timeInterval;
+let startTime;
 
 // Timer function
 
@@ -116,7 +117,7 @@ function updateTimer() {
 
     if (timeLeft <= 0) {
         clearInterval(timeInterval);
-        nextBtn.click();
+        getNextOrEnd();
     }
 }
 
@@ -137,6 +138,8 @@ function loadQuiz() {
     timeLeft = 30; 
     clearInterval(timeInterval);
     timeInterval = setInterval(updateTimer, 1000);
+
+    startTime = new Date().getTime();
 }
 
 // Function to clear answers before a new question  
@@ -163,34 +166,50 @@ function getSelected() {
  */
 
 // Button appearing to go to next question when selecting an answer
-nextBtn.addEventListener('click', () => {
-    const answer = getSelected()
-    if(answer) {
+// nextBtn.addEventListener('click', () => {
 
-        // Saves the answer the user has put in 
-        quizQuestion[currentQuiz].answer = answer; 
+function getNextOrEnd() {
+    const answer = getSelected();
 
-        // Increments scores if the user puts in the correct answer
-        if(answer === quizQuestion[currentQuiz].correct) {
-            score++
-        }
-        currentQuiz++
-        if(currentQuiz < quizQuestion.length) {
-            loadQuiz()
-        } else {
-            let resultsHTML = `<h2 class="quiz-result">You got ${score} out of ${quizQuestion.length}</h2>`
-            resultsHTML += `<button id="showAnswersBtn">Show Correct Answers</button>`
-            quiz.innerHTML = resultsHTML
+    // Saves the answer the user has put in (or null if no answer was selected)
+    quizQuestion[currentQuiz].answer = answer;
 
-            const showAnswersBtn = document.getElementById('showAnswersBtn')
-            showAnswersBtn.addEventListener('click', showCorrectAnswers)
-        }
+    // Increments scores if the user puts in the correct answer
+    if (answer === quizQuestion[currentQuiz].correct) {
+        score++;
     }
-})
+
+    currentQuiz++;
+    if (currentQuiz < quizQuestion.length) {
+        loadQuiz();
+    } else {
+        let resultsHTML = `<h2 class="quiz-result">You got ${score} out of ${quizQuestion.length}</h2>`;
+        resultsHTML += `<button id="showAnswersBtn">Show Correct Answers</button>`;
+        quiz.innerHTML = resultsHTML;
+
+        const showAnswersBtn = document.getElementById('showAnswersBtn');
+        showAnswersBtn.addEventListener('click', showCorrectAnswers);
+    }
+}
+
+nextBtn.addEventListener('click', () => {
+    const answer = getSelected();
+    if (answer) {
+        getNextOrEnd(); 
+    }
+});
 
 // Function to show the correct answers 
 
 function showCorrectAnswers() {
+    const endTime = new Date().getTime();
+    const elapsedTime = endTime - startTime; 
+
+    const minutes = Math.floor(elapsedTime / (1000 * 60));
+    const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+
+
     let answersHTML = '<div id="answersContainer" style="max-height: 70vh; overflow-y: scroll;">'
     quizQuestion.forEach((question) => {
 
@@ -223,7 +242,7 @@ function showCorrectAnswers() {
     })
 
     answersHTML += '</div>'
-
+    answersHTML += `<p>Time taken: ${minutes} minutes ${seconds} seconds</p>`;
     answersHTML += '<button id="reloadBtn">Back To Start</button>'
 
     quiz.innerHTML += answersHTML
