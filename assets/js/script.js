@@ -103,6 +103,22 @@ const nextBtn = document.getElementById('next');
 
 let currentQuiz = 0;
 let score = 0;
+let timeLeft = 30;
+let timeInterval;
+
+// Timer function
+
+function updateTimer() {
+    const timerElement = document.getElementById('timer');
+    timerElement.textContent = `Time Left: ${timeLeft} seconds`;
+
+    timeLeft--;
+
+    if (timeLeft <= 0) {
+        clearInterval(timeInterval);
+        nextBtn.click();
+    }
+}
 
 loadQuiz()
 
@@ -117,6 +133,10 @@ function loadQuiz() {
     a_answer.innerText = currentQuizData.a
     b_answer.innerText = currentQuizData.b
     c_answer.innerText = currentQuizData.c
+
+    timeLeft = 30; 
+    clearInterval(timeInterval);
+    timeInterval = setInterval(updateTimer, 1000);
 }
 
 // Function to clear answers before a new question  
