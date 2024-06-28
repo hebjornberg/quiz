@@ -96,8 +96,6 @@ body{
     padding: 0.5rem;
   }
 
-
-
 .quiz-header{
   padding: 1rem;
 }
@@ -147,20 +145,6 @@ button:focus{
   background-color: #014421;
 }
 
-#quiz-result {
-
-  background-color: rgba(8, 61, 119);
-  color: #FBFEF9;
-  text-align: center;
-  position: relative;
-  z-index: 1;  
-  padding: 10px;
-  width: 100%;
-  inset: 0 0 auto 0; 
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px; 
-
-}
 
 @media screen and (min-width: 820px) {
   .quiz-container, .landing-box {
@@ -188,7 +172,6 @@ button:focus{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* padding: 10px 0; */ 
   }
   
   .quiz-container, .landing-box {
@@ -202,6 +185,13 @@ button:focus{
   .quiz-header {
     flex: 1;
     overflow-y: auto;
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    padding: 0.5rem; 
+    margin: 0 0 0.5rem 0;
   }
 
   h2 {
@@ -218,6 +208,12 @@ button:focus{
   ul li {
     font-size: 1rem; 
     margin: 0.5rem 0; 
+  }
+
+  #answersContainer {
+    max-height: 60vh !important;
+    overflow-y: auto;
+    padding: 10px;
   }
 } 
 
