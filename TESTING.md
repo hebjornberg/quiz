@@ -13,23 +13,6 @@ When clicking the "Start Quiz"-button, you get redirected to the first question 
 </details>
 
 <details>
-<summary>Landing Page - Start Quiz</summary>
-<br>
-
-<b>Start Quiz</b>
-
-![GIF of landig page of Trivia Time with "Start Quiz"-button](assets/docs/testing/start_quiz.gif)
-
-When clicking the "Start Quiz"-button, you get redirected to the first question of the quiz.
-
-This was tested by clicking the button to see that it redirects you to the quiz.html. 
-
-- Landing page - index.html
-- Questions - quiz.html
-
-</details>
-
-<details>
 <summary>Options and Next Question</summary>
 <br>
 
