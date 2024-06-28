@@ -25,6 +25,7 @@ The Trivia Time application is a simple quiz application that is designed to all
   + [Correct Answers](#show-correct "Show Correct") 
   + [Back to Start](#back-to-start "Back to Start")
 + [Testing](#testing "Testing")
+  + [Manual Testing](#manual-testing "Manual Testing")
   + [JavaScript](#javascript "JavaScript")
   + [Validation](#validation "Validation")
   + [Lighthouse](#lighthouse "Lighthouse")
@@ -123,6 +124,12 @@ In case the user selected a wrong answer, a red cross appears to the selected an
 Underneath the correct answers, there is the "Back to Start"-button. When clicked, it directs the user back to the start of the quiz, if they want to try it again. 
 
 ## Testing 
+
+### Manual Testing 
+
+Manual testing was carried out of the application. This has been documented in a separate file.
+
+Manual Testing: [Manual Testing](TESTING.md)
 
 ### JavaScript
 
