@@ -40,9 +40,9 @@ For every question there is a 30 second time limit. If an option hasn't been cho
 <summary>Show Correct Answers, Time taken, Back To Start</summary>
 <br>
 
-<b>Show Correct Answers</b>
-
 ![GIF of "Show Answers"-button, Correct Answers, Time taken, "Back To Start"-button](assets/docs/testing/show_answers.gif)
+
+<b>Show Correct Answers</b>
 
 When finishing the quiz, your result will show up in the form of "You got x out of 11". Underneath is the button "Show Correct Answers". When clicked, the correct answers will appear. If you have chosen the correct answer to a question, only the black tick will appear indicating that you got the correct answer. If you have chosen the incorrect answer, a red cross indicates which answer you choose, along with the black tick indicating the correct option. 
 

@@ -181,6 +181,28 @@ button:focus{
 
 }
 
-
+@media screen and (max-width: 480px) {
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* padding: 10px 0; */
+    }
+  
+    .quiz-container, .landing-box {
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+  
+    .quiz-header {
+      flex: 1;
+      overflow-y: auto;
+    }
+}
 
 
