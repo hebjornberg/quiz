@@ -101,7 +101,7 @@ For each question, there is a 30 second limit to choose a quiz option. If a user
 
 ![Image of "Time taken"](assets/docs/images/end_time.png)
 
-At the end of the quiz when the correct answers are being displayed, the time that it has taken the user to complete the quiz will be displayed. 
+At the end of the quiz when the correct answers are being displayed, the time that it has taken the user to complete the quiz will be displayed.
 
 ### Score
 
