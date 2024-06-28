@@ -20,6 +20,7 @@ The Trivia Time application is a simple quiz application that is designed to all
   + [Landing Page](#landing-page "Landing Page")
   + [Questions](#questions "Questions")
   + [Next Question](#next-question "Next Question")
+  + [Timer](#timer "Timer")
   + [Score](#score "Score")
   + [Correct Answers](#show-correct "Show Correct") 
   + [Back to Start](#back-to-start "Back to Start")
@@ -91,6 +92,16 @@ Every question has three options with radio buttons. You can only select one opt
 ![Image of "Next Question"-button](assets/docs/images/next-button.png)
 
 When you have selected an answer, you click the "Next Question"-button to move to the next question. This button only works and will take you onward if you have selected an answer. 
+
+### Timer
+
+![Image of "Timer"-function](assets/docs/images/timer_.png)
+
+For each question, there is a 30 second limit to choose a quiz option. If a user hasn't choosen an option when the timer reaches 0 seconds, it will jump to the next question. 
+
+![Image of "Time taken"](assets/docs/images/end_time.png)
+
+At the end of the quiz when the correct answers are being displayed, the time that it has taken the user to complete the quiz will be displayed. 
 
 ### Score
 

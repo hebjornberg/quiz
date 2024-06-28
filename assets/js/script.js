@@ -198,7 +198,7 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
-// Function to show the correct answers 
+// Function to show the correct answers and time spent taking the quiz
 
 function showCorrectAnswers() {
     const endTime = new Date().getTime();
